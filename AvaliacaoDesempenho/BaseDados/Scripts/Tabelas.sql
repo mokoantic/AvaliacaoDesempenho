@@ -33,3 +33,5 @@ CREATE TABLE Utilizador(
 	Uti_EmailConfirmado bit,
 	Uti_Activo bit default 1 NOT NULL
 );
+
+INSERT INTO Utilizador(Uti_Gru_Id, Uti_Login, Uti_Password, Uti_Email, Uti_EmailConfirmado) VALUES (2, 'admin', '7C-87-54-1F-D3-F3-EF-50-16-E1-2D-41-19-00-C8-7A-60-46-A8-E8', 'admin@email.com', 1)
