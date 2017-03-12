@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaBase.master.cs" Inherits="AvaliacaoDesempenho.MasterPages.PaginaBase" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta charset="iso-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content="2701" />
+    <title>Avaliação de Desempenho</title>
+
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/datepicker3.css" rel="stylesheet" />
+    <link href="/Content/styles.css" rel="stylesheet" />
+
+    <!--Icons-->
+    <script src="/Scripts/lumino.glyphs.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><span>Avaliação</span>Desempenho</a>
+                    <ul class="user-menu">
+                        <li class="dropdown pull-right">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyph stroked male-user"></i><span id="NomeUtilizador" runat="server"></span><span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <asp:LinkButton runat="server" href="#" Style="color: #aaaaaa; cursor: default;" Enabled="false"><i class="glyph stroked male-user"></i> Profile</asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton runat="server" href="#" Style="color: #aaaaaa; cursor: default;" Enabled="false"><i class="glyph stroked gear"></i> Settings</asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton ID="BTLogout" runat="server" OnClick="BTLogout_Click"><i class="glyph stroked cancel"></i> Logout</asp:LinkButton></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+            <ul class="nav menu" style="margin-top:40px;">
+                <li class="active"><a href="/Dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa fa-list"></i> Quadrantes</a></li>
+                <li><a href="#"><i class="fa fa-users"></i> Funcionários</a></li>
+                <li><a href="#"><i class="fa fa-bar-chart"></i> Estatisticas</a></li>
+                <li><a href="#"><i class="fa fa-list-alt"></i> Avaliação de desempenho</a></li>
+            </ul>
+            <div class="attribution">Projeto de Sistemas de Informação Avançados - Bruno Vilela, Bruno Morais e Marcos Carneiro</div>
+        </div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </form>
+
+    <script src="/Scripts/jquery-1.9.1.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/chart.min.js"></script>
+    <script src="/Scripts/chart-data.js"></script>
+    <script src="/Scripts/easypiechart.js"></script>
+    <script src="/Scripts/easypiechart-data.js"></script>
+    <script src="/Scripts/bootstrap-datepicker.js"></script>
+
+    <script>
+        $('#calendar').datepicker({
+        });
+
+        !function ($) {
+            $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+                $(this).find('em:first').toggleClass("glyphicon-minus");
+            });
+            $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+        }(window.jQuery);
+
+        $(window).on('resize', function () {
+            if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+        })
+        $(window).on('resize', function () {
+            if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+        })
+    </script>
+
+</body>
+</html>

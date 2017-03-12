@@ -1,0 +1,5 @@
+F:\Projetos\GitHub\AvaliacaoDesempenho\AvaliacaoDesempenho\ADFramework\bin\Debug\ADFramework.dll
+F:\Projetos\GitHub\AvaliacaoDesempenho\AvaliacaoDesempenho\ADFramework\bin\Debug\ADFramework.pdb
+F:\Projetos\GitHub\AvaliacaoDesempenho\AvaliacaoDesempenho\ADFramework\obj\Debug\ADFramework.dll
+F:\Projetos\GitHub\AvaliacaoDesempenho\AvaliacaoDesempenho\ADFramework\obj\Debug\ADFramework.pdb
+F:\Projetos\GitHub\AvaliacaoDesempenho\AvaliacaoDesempenho\ADFramework\obj\Debug\ADFramework.csprojResolveAssemblyReference.cache
