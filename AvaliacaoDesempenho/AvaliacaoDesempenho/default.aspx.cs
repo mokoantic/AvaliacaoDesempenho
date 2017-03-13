@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ADFramework.Classes;
 using System.Data;
+using AvaliacaoDesempenho.MasterPages;
 
 namespace AvaliacaoDesempenho
 {

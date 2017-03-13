@@ -33,6 +33,35 @@ namespace AvaliacaoDesempenho.MasterPages
             }
         }
 
+        #region "Menu Activo"
+
+        public System.Web.UI.HtmlControls.HtmlGenericControl Menu_Dashboard
+        {
+            get { return menu_item_1; }
+        }
+
+        public System.Web.UI.HtmlControls.HtmlGenericControl Menu_Quadrantes
+        {
+            get { return menu_item_2; }
+        }
+
+        public System.Web.UI.HtmlControls.HtmlGenericControl Menu_Funcionarios
+        {
+            get { return menu_item_3; }
+        }
+
+        public System.Web.UI.HtmlControls.HtmlGenericControl Menu_Estatisticas
+        {
+            get { return menu_item_4; }
+        }
+
+        public System.Web.UI.HtmlControls.HtmlGenericControl Menu_Avaliacao
+        {
+            get { return menu_item_5; }
+        }
+
+        #endregion
+
         private void _VerificaSessao(DataTable user)
         {
             try

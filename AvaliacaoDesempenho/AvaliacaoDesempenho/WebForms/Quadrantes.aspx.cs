@@ -8,13 +8,13 @@ using System.Web.UI.WebControls;
 
 namespace AvaliacaoDesempenho.WebForms
 {
-    public partial class Dashboard : System.Web.UI.Page
+    public partial class Quadrantes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                ((PaginaBase)this.Master).Menu_Dashboard.Attributes.Add("class", "active");
+                ((PaginaBase)this.Master).Menu_Quadrantes.Attributes.Add("class", "active");
             }
             catch (Exception ex)
             {

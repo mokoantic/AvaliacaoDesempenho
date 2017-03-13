@@ -1,0 +1,9 @@
+F:\Projetos\GitHub\SIA\AvaliacaoDesempenho\BaseDados\bin\Debug\BaseDados.dacpac
+F:\Projetos\GitHub\SIA\AvaliacaoDesempenho\BaseDados\bin\Debug\BaseDados.dll
+F:\Projetos\GitHub\SIA\AvaliacaoDesempenho\BaseDados\bin\Debug\BaseDados.pdb
+F:\Projetos\GitHub\SIA\AvaliacaoDesempenho\BaseDados\obj\Debug\Model.xml
+F:\Projetos\GitHub\SIA\AvaliacaoDesempenho\BaseDados\obj\Debug\refactor.xml
+F:\Projetos\GitHub\SIA\AvaliacaoDesempenho\BaseDados\obj\Debug\postdeploy.sql
+F:\Projetos\GitHub\SIA\AvaliacaoDesempenho\BaseDados\obj\Debug\predeploy.sql
+F:\Projetos\GitHub\SIA\AvaliacaoDesempenho\BaseDados\obj\Debug\BaseDados.dll
+F:\Projetos\GitHub\SIA\AvaliacaoDesempenho\BaseDados\obj\Debug\BaseDados.pdb

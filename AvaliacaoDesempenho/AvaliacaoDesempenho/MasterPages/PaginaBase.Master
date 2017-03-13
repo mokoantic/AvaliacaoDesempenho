@@ -41,9 +41,9 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyph stroked male-user"></i><span id="NomeUtilizador" runat="server"></span><span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <asp:LinkButton runat="server" href="#" Style="color: #aaaaaa; cursor: default;" Enabled="false"><i class="glyph stroked male-user"></i> Profile</asp:LinkButton></li>
+                                    <asp:LinkButton runat="server" href="#" Style="color: #aaaaaa; cursor: default;" Enabled="false"><i class="glyph stroked male-user"></i> Perfil</asp:LinkButton></li>
                                 <li>
-                                    <asp:LinkButton runat="server" href="#" Style="color: #aaaaaa; cursor: default;" Enabled="false"><i class="glyph stroked gear"></i> Settings</asp:LinkButton></li>
+                                    <asp:LinkButton runat="server" href="#" Style="color: #aaaaaa; cursor: default;" Enabled="false"><i class="glyph stroked gear"></i> Definições</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="BTLogout" runat="server" OnClick="BTLogout_Click"><i class="glyph stroked cancel"></i> Logout</asp:LinkButton></li>
                             </ul>
@@ -56,11 +56,11 @@
 
         <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
             <ul class="nav menu" style="margin-top:40px;">
-                <li class="active"><a href="/Dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                <li><a href="#"><i class="fa fa-list"></i> Quadrantes</a></li>
-                <li><a href="#"><i class="fa fa-users"></i> Funcionários</a></li>
-                <li><a href="#"><i class="fa fa-bar-chart"></i> Estatisticas</a></li>
-                <li><a href="#"><i class="fa fa-list-alt"></i> Avaliação de desempenho</a></li>
+                <li id="menu_item_1" runat="server"><a href="/Dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li id="menu_item_2" runat="server"><a href="/Quadrantes"><i class="fa fa-list"></i> Quadrantes</a></li>
+                <li id="menu_item_3" runat="server"><a href="#"><i class="fa fa-users"></i> Funcionários</a></li>
+                <li id="menu_item_4" runat="server"><a href="#"><i class="fa fa-bar-chart"></i> Estatisticas</a></li>
+                <li id="menu_item_5" runat="server"><a href="#"><i class="fa fa-list-alt"></i> Avaliação de desempenho</a></li>
             </ul>
             <div class="attribution">Projeto de Sistemas de Informação Avançados - Bruno Vilela, Bruno Morais e Marcos Carneiro</div>
         </div>

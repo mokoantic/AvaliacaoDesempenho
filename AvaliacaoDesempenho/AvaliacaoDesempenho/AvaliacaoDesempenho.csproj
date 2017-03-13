@@ -103,6 +103,7 @@
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\lumino.glyphs.js" />
     <Content Include="WebForms\Dashboard.aspx" />
+    <Content Include="WebForms\Quadrantes.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -160,6 +161,13 @@
     </Compile>
     <Compile Include="WebForms\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Quadrantes.aspx.cs">
+      <DependentUpon>Quadrantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Quadrantes.aspx.designer.cs">
+      <DependentUpon>Quadrantes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
