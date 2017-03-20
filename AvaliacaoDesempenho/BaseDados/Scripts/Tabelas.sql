@@ -110,7 +110,10 @@ CREATE TABLE LinhaAvaliacao
 	FOREIGN KEY (LAva_Ava_Id) REFERENCES Avaliacao (Ava_Id)
 	on delete cascade
 	on update cascade,
-	LAva_Quadrante nvarchar(300) not null,
+	LAva_Qua_Id integer not null,
+	FOREIGN KEY (LAva_Qua_Id) REFERENCES Quadrante (Qua_Id)
+	on delete cascade
+	on update cascade,
 	LAva_PesoQuadrante integer not null,
 	LAva_Questao nvarchar(300) not null,
 	LAva_PesoQuestao integer not null,

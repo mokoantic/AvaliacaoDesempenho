@@ -385,12 +385,14 @@ DECLARE @SQL nvarchar(3250)
 
 SET @SQL = '
 SELECT
-	[Cla_Id],
-	[Cla_Qua_Id],
-	[Cla_Descricao],
-	[Cla_Cotacao]
+	Classificacao.Cla_Id,
+	Classificacao.Cla_Qua_Id,
+	Quadrante.Qua_Descricao,
+	Classificacao.Cla_Descricao,
+	Classificacao.Cla_Cotacao
 FROM
-	[dbo].[Classificacao]
+	Classificacao LEFT JOIN
+    Quadrante ON Classificacao.Cla_Qua_Id = Quadrante.Qua_Id
 WHERE
 	' + @WhereCondition
 
@@ -497,12 +499,14 @@ DECLARE @SQL nvarchar(3250)
 
 SET @SQL = '
 SELECT
-	[Que_Id],
-	[Que_Qua_Id],
-	[Que_Descricao],
-	[Que_Peso]
+	Questao.Que_Id,
+	Questao.Que_Qua_Id,
+	Quadrante.Qua_Descricao,
+	Questao.Que_Descricao,
+	Questao.Que_Peso
 FROM
-	[dbo].[Questao]
+	Questao INNER JOIN
+    Quadrante ON Questao.Que_Qua_Id = Quadrante.Qua_Id
 WHERE
 	' + @WhereCondition
 
@@ -765,16 +769,18 @@ DECLARE @SQL nvarchar(3250)
 
 SET @SQL = '
 SELECT
-	[LAva_Id],
-	[LAva_Ava_Id],
-	[LAva_Quadrante],
-	[LAva_PesoQuadrante],
-	[LAva_Questao],
-	[LAva_PesoQuestao],
-	[LAva_Classificacao],
-	[LAva_Pontos]
+	LinhaAvaliacao.LAva_Id,
+	LinhaAvaliacao.LAva_Ava_Id,
+	LinhaAvaliacao.LAva_Qua_Id,
+	Quadrante.Qua_Descricao,
+	LinhaAvaliacao.LAva_PesoQuadrante,
+	LinhaAvaliacao.LAva_Questao, 
+    LinhaAvaliacao.LAva_PesoQuestao,
+	LinhaAvaliacao.LAva_Classificacao,
+	LinhaAvaliacao.LAva_Pontos
 FROM
-	[dbo].[LinhaAvaliacao]
+	LinhaAvaliacao LEFT JOIN
+    Quadrante ON LinhaAvaliacao.LAva_Qua_Id = Quadrante.Qua_Id
 WHERE
 	' + @WhereCondition
 
@@ -795,10 +801,9 @@ IF OBJECT_ID(N'[dbo].[Proc_InsertLinhaAvaliacao]') IS NOT NULL
 	DROP PROCEDURE [dbo].[Proc_InsertLinhaAvaliacao]
 GO
 
-
 CREATE PROCEDURE [dbo].[Proc_InsertLinhaAvaliacao]
 	@LAva_Ava_Id int,
-	@LAva_Quadrante nvarchar(300),
+	@LAva_Qua_Id int,
 	@LAva_PesoQuadrante int,
 	@LAva_Questao nvarchar(300),
 	@LAva_PesoQuestao int,
@@ -811,7 +816,7 @@ SET NOCOUNT ON
 
 INSERT INTO [dbo].[LinhaAvaliacao] (
 	[LAva_Ava_Id],
-	[LAva_Quadrante],
+	[LAva_Qua_Id],
 	[LAva_PesoQuadrante],
 	[LAva_Questao],
 	[LAva_PesoQuestao],
@@ -819,7 +824,7 @@ INSERT INTO [dbo].[LinhaAvaliacao] (
 	[LAva_Pontos]
 ) VALUES (
 	@LAva_Ava_Id,
-	@LAva_Quadrante,
+	@LAva_Qua_Id,
 	@LAva_PesoQuadrante,
 	@LAva_Questao,
 	@LAva_PesoQuestao,
@@ -840,7 +845,7 @@ GO
 CREATE PROCEDURE [dbo].[Proc_UpdateLinhaAvaliacao]
 	@LAva_Id int,
 	@LAva_Ava_Id int,
-	@LAva_Quadrante nvarchar(300),
+	@LAva_Qua_Id int,
 	@LAva_PesoQuadrante int,
 	@LAva_Questao nvarchar(300),
 	@LAva_PesoQuestao int,
@@ -852,7 +857,7 @@ SET NOCOUNT ON
 
 UPDATE [dbo].[LinhaAvaliacao] SET
 	[LAva_Ava_Id] = @LAva_Ava_Id,
-	[LAva_Quadrante] = @LAva_Quadrante,
+	[LAva_Qua_Id] = @LAva_Qua_Id,
 	[LAva_PesoQuadrante] = @LAva_PesoQuadrante,
 	[LAva_Questao] = @LAva_Questao,
 	[LAva_PesoQuestao] = @LAva_PesoQuestao,
